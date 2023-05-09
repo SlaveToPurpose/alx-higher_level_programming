@@ -11,5 +11,12 @@ while True:
         continue
     else:
         break
-print(F"Last digit of {number:d} is {r_num:d}")
-r_num = number
+part1 = "Last digit of {} is {}".format(number, r_num)
+
+if r_num == 0:
+        part2 = "and is 0"
+elif r_num > 5:
+        part2 = "and is greater than 5"
+elif r_num < 6:
+        part2 = "and is less than 6 and not 0"
+print(part1 + " " + part2)
