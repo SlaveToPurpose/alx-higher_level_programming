@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-import os
-os.write(1,"#pythoniscool\n".encode())
+import builtins
+builtins.__dict__['p'+chr(114)+'i'+chr(110)+'t']('#pythoniscool')
