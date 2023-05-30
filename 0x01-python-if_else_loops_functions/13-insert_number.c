@@ -11,7 +11,6 @@ listint_t *insert_node(listint_t **head, int number)
 {
     listint_t *new_node;
     listint_t *current_node;
-    
 
     current_node = *head;
     /*allocate space for new_node node*/
