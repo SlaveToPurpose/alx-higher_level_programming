@@ -6,15 +6,18 @@ class Rectangle:
     '''Rectangle called class'''
 
     def __init__(self, width=0, height=0):
+        '''initialise rectangle'''
         self.height = height
         self.width = width
 
     @property
     def width(self):
+        '''getter for width'''
         return self.__width
 
     @width.setter
     def width(self, width):
+        '''setter for width'''
         if type(width) is not int:
             raise TypeError("width must be an integer")
         if width < 0:
@@ -23,10 +26,12 @@ class Rectangle:
 
     @property
     def height(self):
+        '''getter for height'''
         return self.__height
 
     @height.setter
     def height(self, height):
+        '''setter for height'''
         if type(height) is not int:
             raise TypeError("height must be an integer")
         if height < 0:
@@ -47,7 +52,7 @@ class Rectangle:
             return self.__width * 2 + self.__height * 2
 
     def __str__(self):
-        """printing rectangle in #s"""
+        '''printing rectangle in #s'''
         if self.__width == 0 or self.__height == 0:
             return ""
 
