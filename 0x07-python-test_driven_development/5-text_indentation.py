@@ -1,14 +1,26 @@
+#!/usr/bin/python3
+"""Definiton for text indentation"""
+
+
 def text_indentation(text):
-    if not isinstance(text, str):
-        raise TypeError("text must be a string")
-        
-    punctuations = ['.', '?',':'
-    lines = text.splitlines()
-    output = []
+    """
+    Prints two new line characters after certain charasters
     
+    Raise TypeError:
+    - if text is not a string
+    """
+    if type(text) is not str:
+        raise TypeError("text must be a string")
+
+    output = []
+
+    lines = text.splitlines()
+
+    for i in lines:
+        i = i.strip()
+
     for line in lines:
-        line = line.strip()  # Remove leading and trailing whitespace
-        if line.endswith(tuple(punctuations)):
+        if line.endswith(".") or line.endswith("?") or line.endswith(":"):
             output.append(line + '\n\n')
         else:
             output.append(line + '\n')
