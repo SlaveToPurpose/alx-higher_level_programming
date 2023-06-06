@@ -9,11 +9,10 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """initialise rectangle"""
-
-        self.height = height
+        """Initialize a Rectangle instance"""
+        type(self).number_of_instances += 1
         self.width = width
-        Rectangle.number_of_instances += 1
+        self.height = height
 
     @property
     def width(self):
@@ -21,13 +20,13 @@ class Rectangle:
         return self.__width
 
     @width.setter
-    def width(self, width):
+    def width(self, widthval):
         """setter for width"""
-        if type(width) is not int:
+        if type(widthval) is not int:
             raise TypeError("width must be an integer")
-        if width < 0:
+        if widthval < 0:
             raise ValueError("width must be >= 0")
-        self.__width = width
+        self.__width = widthval
 
     @property
     def height(self):
@@ -63,8 +62,8 @@ class Rectangle:
             return (rectAngle)
         symbolz = str(self.print_symbol)
         for i in range(self.__height):
-            rectAngle += symbolz * self.__width
-            if i != self.__height - 1:
+            rectAngle += "{}".format(symbolz * self.__width)
+            if i != (self.__height - 1):
                 rectAngle += "\n"
         return (rectAngle)
 
@@ -84,14 +83,12 @@ class Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if type(rect_2) is not Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.area() == rect_2.area():
+        if rect_1.area() >= rect_2.area():
             return rect_1
-        elif rect_1.area() > rect_2.area():
-            return rect_1
-        elif rect_2.area() > rect_1.area():
+        elif rect_1.area() < rect_2.area():
             return rect_2
 
     @classmethod
     def square(cls, size=0):
         """class method to return new Rectangle instance"""
-        return Rectangle(size, size)
+        return cls(size, size)
