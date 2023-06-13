@@ -14,8 +14,6 @@ if __name__ == "__main__":
     except FileNotFoundError:
         returnList = []
 
-    if (len(sys.argv)) > 1:
-        for arg in range(1, len(sys.argv)):
-            returnList.append(sys.argv[arg])
+    data.extend(sys.argv[1:])
 
     save_to_json_file(returnList, "add_item.json")
