@@ -1,3 +1,12 @@
+#!/usr/bin/python3
+
+"""Base class"""
+
+import json
+import csv
+import turtle
+
+
 """ “base” of all other classes.
 The goal of it is to manage id attribute in all
 your future classes and to avoid duplication
