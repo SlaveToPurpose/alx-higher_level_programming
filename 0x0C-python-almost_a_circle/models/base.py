@@ -1,19 +1,21 @@
 #!/usr/bin/python3
 
-"""Base class"""
+"""Base class
+
+The goal of it is to manage id attribute in all
+your future classes and to avoid duplication.
+"""
 
 import json
 import csv
 import turtle
 
-
-""" “base” of all other classes.
-The goal of it is to manage id attribute in all
-your future classes and to avoid duplication
-"""
-
 class Base:
-    """Base class for managing ids"""
+    """Base class for managing ids.
+    
+    Private Class Attributes:
+    __nb_object (int): Number of instaniated Bases.
+    """
 
 
     __nb_objects = 0
@@ -23,7 +25,8 @@ class Base:
         Constructor for the Base class.
 
         Parameters:
-        - id (int)
+        - id (int): id of new Base
+        
         Returns:
         None
         """
