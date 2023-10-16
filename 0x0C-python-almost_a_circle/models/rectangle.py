@@ -93,10 +93,10 @@ class Rectangle(Base):
 		Returns:
 		None
 		"""	
-		for i in range(self.__height):
-			for j in range(self.__width):
-				print("#", end="")
+		for i in range(self.__y):
 			print("")
+		for j in range(self.__height):
+			print(" " - self.__x + "#" * self.__width)
 
 	def __str__(self):
 		"""Return string representation of Rectangle
