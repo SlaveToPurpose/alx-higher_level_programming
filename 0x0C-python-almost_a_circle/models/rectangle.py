@@ -16,7 +16,7 @@ class Rectangle(Base):
         height(int): height of rectangle
         x(int): x coordinate of rectangle
         y(int): y coordinate of rectangle
-        id(int): ID of rectangle 
+        id(int): ID of rectangle
 
         Returns:
         None
@@ -105,4 +105,29 @@ class Rectangle(Base):
         Returns:
         str: string representation
         """
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return (
+            f"[Rectangle] ({self.id}) "
+            f"{self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        )
+    
+    def update(self, *args):
+        """
+        Update the attributes of the Rectangle instance
+        by assigning an argument to each attribute.
+
+        Parameters:
+        - args (int): Arguments.
+
+        Returns:
+        None
+        """
+        if len(args) >= 1:
+            self.id = args[0]
+        if len(args) >= 2:
+            self.width = args[1]
+        if len(args) >= 3:
+            self.height = args[2]
+        if len(args) >= 4:
+            self.x = args[3]
+        if len(args) >= 5:
+            self.y = args[4]
