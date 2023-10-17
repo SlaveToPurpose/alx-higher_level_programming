@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from models.rectangle import Rectangle
 
 class Square(Rectangle):
@@ -30,3 +31,23 @@ class Square(Rectangle):
         str: String
         """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.height}"
+
+    @property
+    def size(self):
+        """Getter for size"""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        Setter for size.
+
+        Parameters:
+        - value (int): Value to set for size
+
+	Raises:
+        - TypeError: If value is not an integer.
+        - ValueError: If value is <= 0.
+        """
+        self.width = value
+        self.height = value
