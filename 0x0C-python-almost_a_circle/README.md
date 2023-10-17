@@ -22,3 +22,11 @@
 9. Update #1
 
 10. And now, the Square!
+
+11. Square size
+
+12. Square update
+
+13. Rectangle instance to dictionary representation
+
+14. Square instance to dictionary representation
