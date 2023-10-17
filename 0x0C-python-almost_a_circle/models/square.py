@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+"""Sqaure class"""
 from models.rectangle import Rectangle
+
 
 class Square(Rectangle):
     """Square class, inherits from Rectangle"""
@@ -45,9 +47,31 @@ class Square(Rectangle):
         Parameters:
         - value (int): Value to set for size
 
-	Raises:
+        Raises:
         - TypeError: If value is not an integer.
         - ValueError: If value is <= 0.
         """
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """
+        Update the attributes of the Square with the provided arguments.
+
+        Parameters:
+        - args (int): Arguments
+        - kwargs (dict): Key-value pairs
+
+        Returns:
+        None
+        """
+        if args:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.size = args[1]
+            if len(args) >= 3:
+                self.y = args[3]
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
