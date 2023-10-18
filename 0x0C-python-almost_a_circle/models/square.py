@@ -66,14 +66,12 @@ class Square(Rectangle):
         None
         """
         if args:
-            if args[0] is None:
-                self.__init__(self.size, self.x, self.y)
             if len(args) >= 1:
                 self.id = args[0]
             if len(args) >= 2:
                 self.size = args[1]
             if len(args) >= 3:
-                self.y = args[3]
+                self.y = args[2]
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
