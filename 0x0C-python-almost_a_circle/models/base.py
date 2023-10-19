@@ -56,15 +56,16 @@ class Base:
         Parameters:
         - list_objs (list): List of inherited base instances
         """
-        if list_objs is None:
-            list_objs = "[]"
-
-        dict = []
-        for obj in list_objs:
-            dict.append(obj.to_dictionary())
-
-        jsonString = cls.to_json_string(dict)
         filename = cls.__name__ + ".json"
 
-        with open(filename, 'w') as f:
-            f.write(jsonString)
+        if list_objs is None:
+            with open(filename, 'w') as f:
+                f.write("[]")
+        else:
+            dict = []
+            for obj in list_objs:
+                dict.append(obj.to_dictionary())
+
+            jsonString = cls.to_json_string(dict)
+            with open(filename, 'w') as f:
+                f.write(jsonString)
