@@ -39,7 +39,7 @@ class Base:
     def to_json_string(list_dictionaries):
         """
         Returns the JSON string representation
-        
+
         Parameters:
         - list_dictionaries(list): list of dictionaries
         """
@@ -52,7 +52,7 @@ class Base:
     def save_to_file(cls, list_objs):
         """
         Writes the JSON string representation of a list of instaances to a file
-        
+
         Parameters:
         - list_objs (list): List of inherited base instances
         """
@@ -69,3 +69,15 @@ class Base:
             jsonString = cls.to_json_string(dict)
             with open(filename, 'w') as f:
                 f.write(jsonString)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns the list of the json string representation
+
+        Parameters:
+        - json_string(string): string representing list of dictionaries
+        """
+        if json_string is None or len(json_string) == 0:
+            return []
+        else:
+            return json.loads(json_string)
